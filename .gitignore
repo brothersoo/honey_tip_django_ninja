@@ -260,4 +260,4 @@ fabric.properties
 
 .idea
 venv
-core/.env
+honey_tip/.env

@@ -69,7 +69,7 @@ class Migration(migrations.Migration):
                 ('title', models.CharField(max_length=50, verbose_name='title')),
                 ('content', models.CharField(max_length=800, verbose_name='content')),
                 ('status', models.CharField(choices=[('PST', 'Posted'), ('RMV', 'Removed'), ('HID', 'Hidden'), ('RPT', 'Reported')], default='PST', max_length=3, verbose_name='status')),
-                ('category', models.ForeignKey(null=True, on_delete=django.db.models.deletion.SET_NULL, to='core.category')),
+                ('category', models.ForeignKey(null=True, on_delete=django.db.models.deletion.SET_NULL, to='honey_tip.category')),
                 ('user', models.ForeignKey(null=True, on_delete=django.db.models.deletion.SET_NULL, to=settings.AUTH_USER_MODEL)),
             ],
             options={
@@ -85,7 +85,7 @@ class Migration(migrations.Migration):
                 ('created_at', models.DateTimeField(auto_now_add=True, verbose_name='created at')),
                 ('updated_at', models.DateTimeField(auto_now=True, verbose_name='updated at')),
                 ('status', models.CharField(choices=[('PND', 'Pending'), ('RJT', 'Rejected'), ('APV', 'Approved')], default='PND', max_length=3, verbose_name='status')),
-                ('tip', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='core.tip')),
+                ('tip', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='honey_tip.tip')),
                 ('user', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
             ],
             options={
